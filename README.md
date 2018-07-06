@@ -17,11 +17,17 @@ How to upload your changes?
 Do the following:
 1. git status                    :(optional) this will list all new files and modified files to be committed
 2. git add .                     :Snapshot the file in preparation for versioning
-3. git commit -m "<description>" :Records file snapshots permanently in version history
+3. git commit -m "description" :Records file snapshots permanently in version history
 4. git push                      :push the changes to the remote repository
 
-NOTE: you can combine steps 2 and 3 by typing: git commit -a -m "<description>"
+NOTE: you can combine steps 2 and 3 by typing: git commit -a -m "description of the changes you made"
 
+---------------------------
+
+What if I want to upload only a single file?
+1. git add [path to the file]
+2. git commit -m "description of the changes you made"
+3. git push
 
 ---------------------------
 How to get the updates made by your team members?
