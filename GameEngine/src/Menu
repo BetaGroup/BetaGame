@@ -1,0 +1,207 @@
+/*
+ * Welcome to the World of Tomrrow!
+ * Jul 22, 2018 
+ */
+package Engine;
+
+import java.awt.Dimension;
+import javax.swing.*;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+import java.awt.MouseInfo;
+import java.awt.event.MouseAdapter;
+/**
+ *
+ * @author KnightLife
+ */
+
+
+public class Menu extends JPanel implements MouseListener 
+{
+    public boolean hover = false;
+    String className = null; //this is your class name for add.Jframe thing.
+    static int height = 800;
+    static int width = 800;
+    public boolean running = true;
+    
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        int mx = e.getX();
+        int my = e.getY();
+        System.out.println("X = " + mx);
+        System.out.println("Y = " + my);
+        if (mouseOver(mx, my, 300, 25, 200 , 100 ))
+                    {
+                        System.out.println("You are in play");
+                    }
+        
+        if (mouseOver(mx, my, 300, 475, 200 , 100  ))
+                    {
+                        JFrame frame = new JFrame("Beta Group");
+                        frame.getContentPane().add(new Credits());
+                        frame.setSize(800, 800);
+                        frame.setVisible(true);
+                        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frame.setResizable(false);
+                        frame.setBackground(Color.black);                   // for background
+                        frame.setForeground(Color.white);
+                    }
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        hover = true;
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        hover = false;
+    }
+   
+    public enum STATE
+    {
+        Menu,
+        Game,
+        Help,
+        End
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+      super.paintComponent(g);
+      // draw the rectangle here
+      running = true;
+      g.setColor(java.awt.Color.BLACK);
+      g.fillRect(0,0,800,800);
+      
+      
+      //draw the rectangles; size 200x100
+      g.setColor(java.awt.Color.BLUE);
+      
+
+      g.fillRect(300, 25, 200 , 100);
+      
+      g.fillRect(300, 175, 200 , 100);
+      
+      g.fillRect(300, 325, 200 , 100);
+      
+      g.fillRect(300, 475, 200 , 100);
+      
+      g.fillRect(300, 625, 200 , 100);
+      
+      //draw the borders
+      g.setColor(java.awt.Color.WHITE);
+      
+      //draw left border
+      g.fillRect(293, 25, 7, 100);
+      g.fillRect(293, 175, 7, 100); 
+      g.fillRect(293, 325, 7, 100);
+      g.fillRect(293, 475, 7, 100); 
+      g.fillRect(293, 625, 7, 100); 
+      
+      //draw right border
+      g.fillRect(500, 25, 7, 100); //left
+      g.fillRect(500, 175, 7, 100); //left
+      g.fillRect(500, 325, 7, 100); //left
+      g.fillRect(500, 475, 7, 100); //left
+      g.fillRect(500, 625, 7, 100); //left
+      
+      //draw the top border
+      g.fillRect(293, 18, 214, 7);
+      g.fillRect(293, 168, 214, 7);
+      g.fillRect(293, 318, 214, 7);
+      g.fillRect(293, 468, 214, 7);
+      g.fillRect(293, 618, 214, 7);
+      
+      //draw the bottom border
+      g.fillRect(293, 125, 214, 7);
+      g.fillRect(293, 275, 214, 7);
+      g.fillRect(293, 425, 214, 7);
+      g.fillRect(293, 575, 214, 7);
+      g.fillRect(293, 725, 214, 7);
+      
+      
+      //draw strings
+      g.setFont(new Font("ARIAL", Font.BOLD, 50)); 
+      g.drawString("Play", 350, 90);
+      g.drawString("Help", 350, 240);
+      
+      g.setFont(new Font("ARIAL", Font.BOLD, 35)); 
+      g.drawString("High Score", 310, 390);
+      
+      g.setFont(new Font("ARIAL", Font.BOLD, 50)); 
+      g.drawString("Credits", 315, 540);
+      g.drawString("Quit", 350, 690);
+   }
+    
+    public static void createAndShowGui() 
+    {
+        
+      Menu Menu = new Menu();
+
+      JFrame frame = new JFrame("Beta Blocks");
+      frame.setSize(800,800);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.getContentPane().add(Menu);
+      frame.setVisible(true);
+      frame.addMouseListener(Menu);
+      
+    
+      
+      //gameStates();
+    }
+    
+    
+    private boolean mouseOver(int mx, int my, int x, int y, int width, int height) 
+    {
+        
+        if (mx > x && mx < x + width) 
+        {
+            if (my > y && my < y + height) 
+            {
+                return true;
+            } else 
+            {
+                return false;
+            }
+        } else 
+        {
+            return false;
+        }
+    }
+
+    
+    public void gameStates()
+    {
+         System.out.print("Hello World");
+            while(mouseOver(MouseInfo.getPointerInfo().getLocation().x, MouseInfo.getPointerInfo().getLocation().y, 0,0,800,800))
+                    {
+                        System.out.print("Hello World");
+                    }
+       
+    }
+   
+    
+    public static void main(String[] args)
+    {
+       
+        createAndShowGui();
+      
+
+    }
+    
+}
