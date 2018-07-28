@@ -1,7 +1,7 @@
 package samuelCode;
 
-import Engine.Bullet;
-import Engine.GameLooper;
+import JonathansCode.Bullet;
+import JonathansCode.GameLooper;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
