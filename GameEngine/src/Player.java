@@ -50,14 +50,14 @@ public class Player extends GameObjects{
         }
         
         
-        if (x >= GameLooper.WIDTH - 38){ // this will make player object not espcape screen
-            x = GameLooper.WIDTH - 38;
+        if (x >= Betablocks.WIDTH - 38){ // this will make player object not espcape screen
+            x = Betablocks.WIDTH - 38;
         } 
         if (x <= 0) {
             x = 0;
         }
-        if(y >= GameLooper.HEIGHT - 62){
-            y = GameLooper.HEIGHT - 62;
+        if(y >= Betablocks.HEIGHT - 62){
+            y = Betablocks.HEIGHT - 62;
         }
         if (y <= 0) {
             y = 0;
@@ -66,7 +66,7 @@ public class Player extends GameObjects{
        if(firing){
            long elapsed = (System.nanoTime() - fireTimer) / 1000000;
            if(elapsed > bullet_delay){
-               GameLooper.bullets.add(new Bullet(270, x_cord, y_cord));
+               Betablocks.bullets.add(new Bullet(270, x_cord, y_cord));
                fireTimer = System.nanoTime();
            }   
        }   

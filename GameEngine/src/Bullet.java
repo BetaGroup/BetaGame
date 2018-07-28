@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Engine;
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -39,13 +34,13 @@ public class Bullet extends GameObjects{
                 om.removeObject(this);
                 }
              }
-            if (x >= GameLooper.WIDTH - 38){ // this will make player object not espcape screen
+            if (x >= Betablocks.WIDTH - 38){ // this will make player object not espcape screen
              om.removeObject(this);
         } 
         if (x <= 0) {
             om.removeObject(this);
         }
-        if(y >= GameLooper.HEIGHT - 62){
+        if(y >= Betablocks.HEIGHT - 62){
              om.removeObject(this);
         }
         if (y <= 0) {
