@@ -88,7 +88,7 @@ public class Credits extends Panel {
         // Joel contribution
         g.drawString("- Credits", setx, setyJO + 15);
         g.drawString("- Help", setx, setyJO + 30);
-        g.drawString("- Enemy creature ---", setx, setyJO + 45);
+        g.drawString("- Enemy creature Lobo", setx, setyJO + 45);
         g.drawString("- SDD Document", setx, setyJO + 60);
         // images section
         g.drawImage(Jonathan, setImgx, setImgy, sizeimg, sizeimg, null);
@@ -99,19 +99,19 @@ public class Credits extends Panel {
     }
 //***** rememebr to comment this section out when testing******
 
-    public static void main(String[] args) {    // code for frame structure
-
-        JFrame frame = new JFrame("Beta Group");
-        frame.getContentPane().add(new Credits());
-        frame.setSize(800, 800);
-        frame.setVisible(true);
-        JLabel sam = new JLabel(new ImageIcon("sam.png"));
-        sam.setBounds(10, 10, 32, 32);
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
-        frame.setBackground(Color.black);                   // for background
-        frame.setForeground(Color.white);
-
-    }
+//    public static void main(String[] args) {    // code for frame structure
+//
+//        JFrame frame = new JFrame("Beta Group");
+//        frame.getContentPane().add(new Credits());
+//        frame.setSize(800, 800);
+//        frame.setVisible(true);
+//        JLabel sam = new JLabel(new ImageIcon("sam.png"));
+//        sam.setBounds(10, 10, 32, 32);
+//
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setResizable(false);
+//        frame.setBackground(Color.black);                   // for background
+//        frame.setForeground(Color.white);
+//
+//    }
 }
