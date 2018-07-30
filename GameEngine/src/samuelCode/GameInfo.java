@@ -97,28 +97,28 @@ public class GameInfo {
            graphics.drawString("Final Round", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("1:00")){
             increseScore(4); 
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("1:30")) {
             increseScore(3);  
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("2:00")) {
             increseScore(3);  
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("2:30")){
             increseScore(2);
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("3:00")){
             increseScore(1);
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("3:30")){
             increseScore(1);
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("4:00")){
             increseScore(1);
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          } else if (new String(clock).equals("4:30")){
             increseScore(1);
-            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+            graphics.drawString("Round Completed!", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
          }
          
          //display score points
