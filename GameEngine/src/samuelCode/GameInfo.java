@@ -14,7 +14,7 @@ public class GameInfo {
     public static int totalLife = 250;
     private int secondsPassed = 0;
     private int gameTime = 300; //300 seconds equals 5 minuts
-    private int timeLeft = 0;
+    private int timeLeft = gameTime;
     private int score = 0;
     private String clock = "0:00";
     
@@ -100,6 +100,7 @@ public class GameInfo {
             graphics.setFont(goFont);
             graphics.setColor(Color.black);
             graphics.drawString("Game Over", (GameLooper.WIDTH / 2 ) - 100  ,GameLooper.HEIGHT /2);
+            myTimer.cancel(); //stop timer countdown
             timeLeft = 0;
         }
     }
