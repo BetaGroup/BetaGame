@@ -35,7 +35,6 @@ public class GameInfo {
             timeLeft = gameTime - secondsPassed;
             secondsToMinuts(timeLeft); //call the function to display the clock
         };
-
     };
     
     public int getScore(){
@@ -86,13 +85,47 @@ public class GameInfo {
          Font timeFont = new Font("ariel", 1, 50);
          graphics.setFont(timeFont);
          graphics.setColor(Color.black);
-         graphics.drawString("Timer: " + clock, (GameLooper.WIDTH / 2 ) - 70 ,50);
+         graphics.drawString("" + clock, (GameLooper.WIDTH / 2 ) - 70 ,50);
+         //display timer in red as a way to notify the player that time is
+         //about to expired
+         Font checkPoint = new Font("ariel", 1, 50);
+         graphics.setFont(timeFont);
+            graphics.setColor(Color.green);
+         if(new String(clock).equals("0:30")){
+           graphics.setColor(Color.red);
+           increseScore(5);
+           graphics.drawString("Final Round", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("1:00")){
+            increseScore(4); 
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("1:30")) {
+            increseScore(3);  
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("2:00")) {
+            increseScore(3);  
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("2:30")){
+            increseScore(2);
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("3:00")){
+            increseScore(1);
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("3:30")){
+            increseScore(1);
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("4:00")){
+            increseScore(1);
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         } else if (new String(clock).equals("4:30")){
+            increseScore(1);
+            graphics.drawString("Round Completed", (GameLooper.WIDTH / 2 ) - 200 ,GameLooper.HEIGHT / 2);
+         }
          
          //display score points
          Font scoreFont = new Font("ariel", 1, 50);
          graphics.setFont(scoreFont);
          graphics.setColor(Color.black);
-         graphics.drawString("Score", (GameLooper.WIDTH - 100 ) - 50 ,50);
+         graphics.drawString(score + "", (GameLooper.WIDTH) - 300,50);
          
          //display game over message if timer or life reaches zero 
          if(timeLeft <= 0 || life <= 0){
@@ -102,6 +135,7 @@ public class GameInfo {
             graphics.drawString("Game Over", (GameLooper.WIDTH / 2 ) - 100  ,GameLooper.HEIGHT /2);
             myTimer.cancel(); //stop timer countdown
             timeLeft = 0;
+            life = 0;
         }
     }
 }
